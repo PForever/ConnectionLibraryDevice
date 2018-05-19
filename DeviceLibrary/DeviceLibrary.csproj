@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EF82EA0-6E2C-484E-9A6F-22C1AB2ABE87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeviceLibrary</RootNamespace>
+    <AssemblyName>DeviceLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\DataObjects\Containers\CallType.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\ConnectionResult.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\DateValues.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\IMessage.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\MessageType.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\Properties.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\PropertiesValues.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\SynchronizeData.cs" />
+    <Compile Include="Abstract\DataObjects\Containers\SynchronizeResult.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\Device.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\Devices.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\ICodeble.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\IDevice.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\PropertyInfo.cs" />
+    <Compile Include="Abstract\DataObjects\Devices\ProperyType.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\Call.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\CommandMessage.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\ConnectMessage.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\ErrorMessage.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\Order.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\Request.cs" />
+    <Compile Include="Abstract\DataObjects\Messages\Telemetry.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\AAddressManager.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\AConnecter.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\AConnectionWorker.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\AFullMessageSender.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\AMessageManager.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\Containers\AddressBook.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\Containers\Addresses.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\Containers\ConnectionIpHost.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\Containers\ConnectionPort.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\ITcpClient.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\ITcpServer.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\IUdp.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\Protocoles\ProtocolHepler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\TcpSender.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\TcpServer.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\UdpSender.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Clients\UdpServer.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventCallArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventCommandMessageArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventErrArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventMessageConnectArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventOrderArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventRequestArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\EventTelemetryArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\IEventIMessageArgs.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Args\RemoteHostInfo.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventCallHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventCommandHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventErrHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventMessageConnectHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventRequestHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Handlers\Delegates\EventTelemetryHandler.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\IFullMessageReceiver.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\IFullMessageSender.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\MessageControllers\ASenderController.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\MessageControllers\AServerController.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Parse\IMessageParser.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Parse\IObjectParser.cs" />
+    <Compile Include="Abstract\Modules\MessageManager\Parse\IParsing.cs" />
+    <Compile Include="Abstract\Server\EventDataArg.cs" />
+    <Compile Include="Abstract\Server\EventDataHandler.cs" />
+    <Compile Include="Abstract\Server\IConnectPoint.cs" />
+    <Compile Include="Abstract\Server\IContainer.cs" />
+    <Compile Include="Abstract\Server\IListener.cs" />
+    <Compile Include="Abstract\Server\ISender.cs" />
+    <Compile Include="Modules\MessageManager\ConnectionWorker.cs" />
+    <Compile Include="Modules\MessageManager\MessageManager.cs" />
+    <Compile Include="Modules\MessageManager\SenderManager.cs" />
+    <Compile Include="Modules\MessageManager\Serialize\Deserializing.cs" />
+    <Compile Include="Modules\MessageManager\Serialize\JsonHelp.cs" />
+    <Compile Include="Modules\MessageManager\Serialize\Serializing.cs" />
+    <Compile Include="Modules\MessageManager\ServerManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ConnectionLibrary\LogFactory\LogSingleton.csproj">
+      <Project>{735A6298-CAED-4DB2-B01D-6EE2627FE826}</Project>
+      <Name>LogSingleton</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
